@@ -1,0 +1,24 @@
+<!-- Backup of the original home.html -->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>{% block title %}Student Management System{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <li>Welcome, {{ user.username }}!</li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% block content %}
+        <h2>Home</h2>
+        <p>Welcome to the Student Management System</p>
+        {% endblock %}
+    </body>
+</html>

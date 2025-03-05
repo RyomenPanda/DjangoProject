@@ -1,0 +1,29 @@
+<!-- templates/home.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+    }
+    h2 {
+        color: #333;
+    }
+    p {
+        color: #555;
+        line-height: 1.6;
+    }
+    .content-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<div class="content-container">
+    <h2>Home</h2>
+    <p>Welcome to the Student Management System</p>
+{% endblock %}

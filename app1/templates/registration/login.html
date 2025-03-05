@@ -1,0 +1,54 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    .login-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    .links a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .links a:hover {
+        text-decoration: underline;
+    }
+</style>
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <div class="links">
+        <a href="{% url 'password_reset' %}">Forgot Password?</a>
+        <br>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    </div>
+</div>
+{% endblock %}
